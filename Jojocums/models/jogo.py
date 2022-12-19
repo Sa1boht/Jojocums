@@ -1,5 +1,5 @@
 from django.db import models
-from . import Base, Produtora, Distribuidora, Genero
+from . import Base
 from django.core.validators import MinValueValidator, MaxValueValidator
 
 

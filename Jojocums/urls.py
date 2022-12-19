@@ -28,6 +28,5 @@ urlpatterns = [
     path("jogo/edit/<int:jogo_id>", views.edit_jogo, name="edit_jogo"),
     path("jogo/delete/<int:jogo_id>", views.delete_jogo, name="delete_jogo"),
     path("jogo/jogos", views.jogo_list, name="jogos"),
-    
-    path("accounts/", include(accounts.urls)),
+    path("accounts/", include("accounts.urls")),
 ]

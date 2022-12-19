@@ -5,7 +5,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 class Jogo(Base):
     titulo = models.CharField(max_length=150)
-    produtora = models.ForeignKey(Produtora, on_delete=models.PROTECT)
-    distribuidora = models.ForeignKey(Distribuidora, on_delete=models.PROTECT)
-    genero = models.ForeignKey(Genero, on_delete=models.PROTECT)
+    produtora = models.CharField(max_length=150)
+    distribuidora = models.CharField(max_length=150)
+    genero = models.CharField(max_length=30)
     ano_lancamento = models.PositiveIntegerField()

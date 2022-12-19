@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import JogoForm
+from .models import Jogo
 
 def index(request):
 	context = {}
@@ -15,7 +16,7 @@ def create_jogo(request):
 	else:
 		form = JogoForm()
 	context = {
-		'form':form
+		'form':form,
 		'message':message
 	}
 
@@ -38,13 +39,13 @@ def edit_jogo(request, jogo_id):
 			form = JogoForm(instance = jogo)
 			context = {"form": form,
 						"action": "edit",
-						"article_id": article_id,
+						"article_id": jogo_id,
 			}
 			return render(request, "Jojocums/jogo.html", context)
 	except:
 		#Aqui podem ser armazenadas em log informações relevantes
 		context = {}
-		return render(request, "Jojocums.index.html", context)
+		return render(request, "Jojocums/index.html", context)
 
 
 def delete_jogo(request, jogo_id):
